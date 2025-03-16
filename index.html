@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Happy Birthday Chhavi!</title>
+    <link rel="icon" type="image/x-icon" href="favicon.ico">    
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Pacifico&family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <header>
+        <h1>Happy Birthday! 🥳</h1>
+        <p style="font-family: cursive;">Hope you have a wonderful day filled with joy and laughter!</p>
+        <img src="images/cake2.jpg" class="active cake-image" alt="birthday cake">
+    </header>
+    <section id="games">
+        <h2>Stay this same amazing person that you are!</h2>
+        <ul>
+    </section>
+    <section id="media">
+        <h2>Celebrate with Us! 🎉</h2>
+        <p style="font-family: cursive;color: #f688bf">Tickets ke liye click on <b>Train 👇</b> to...</p>
+        <div class="image-container">
+            <img src="images/ooty3.jpg" alt="ooty1" class="active" onclick="nextImage('train')">
+            <img src="images/ooty1.jpg" alt="ooty2" onclick="nextImage()">
+            <img src="images/ooty2.webp" alt="ooty3" onclick="nextImage()">
+        </div>
+        <p style="font-family: cursive;color: #f688bf">will take you sometime</p>
+
+    </section>
+
+    <section id="media-tea">
+        <h3>Chai in ooty is famous, kya pata mai bhi pilun😁!</h3>
+        <p></p>
+        <div class="image-container-tea">
+            <img src="images/ootyTea1.jpg" alt="tea1" class="active" onclick="nextImage('tea')">
+            <img src="images/ootyTea2.jpg" alt="tea2" onclick="nextImage('tea')">
+            <img src="images/ootyTea3.jpg" alt="tea3" onclick="nextImage('tea')">
+        </div>
+    </section>
+
+    <section id="jokes">
+        <h2>Le mere ghatiya Jokes 🤪</h2>
+        <p style="font-family: cursive;color: #3c7807">I bought a dog the other day. I named him Stay. It's fun to call him. 'Come here, Stay! Come here, Stay!' He went insane.</p>
+        <p style="font-family: cursive;color: #3c7807">Why can't you tell a joke to an egg? It might crack up!</p>
+        <p style="font-family: cursive;color: #3c7807">Why was 6 afraid of 7? because 7 8(ate) 9</p>
+        <p style="font-family: cursive;color: #3c7807">I saw a bank that said "24-hour banking" but I don't have that much time.</p>
+        <p style="font-family: cursive;color: #3c7807">I told my wife she should embrace her mistakes. She gave me a hug.</p>
+    </section>
+
+    <section id="gifts">
+        <h2>Gifts 🤗</h2>
+        <p style="font-family: cursive;color: #f688bf">Gift on next meet</p>
+    </section>
+
+    <script>
+        let currentImageIndexTrain = 0;
+        let currentImageIndexTea = 0;
+
+        function nextImage(type) {
+            let images;
+            if (type === 'train') {
+                images = document.querySelectorAll('.image-container img');
+                images[currentImageIndexTrain].classList.remove('active');
+                currentImageIndexTrain = (currentImageIndexTrain + 1) % images.length;
+                images[currentImageIndexTrain].classList.add('active');
+            } else if (type === 'tea') {
+                images = document.querySelectorAll('.image-container-tea img');
+                images[currentImageIndexTea].classList.remove('active');
+                currentImageIndexTea = (currentImageIndexTea + 1) % images.length;
+                images[currentImageIndexTea].classList.add('active');
+            }
+        }
+
+        // Automatically change tea images every 1 second
+        setInterval(() => {
+            nextImage('tea');
+        }, 1800);
+
+        // Add event listener to train images to change on click
+        document.querySelectorAll('.image-container img').forEach(img => {
+            img.addEventListener('click', () => nextImage('train'));
+        });
+    </script>
+</body>
+</html>

@@ -1,0 +1,115 @@
+body {
+    font-family: 'Roboto', sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f0f8ff;
+    color: #333;
+}
+
+header {
+    text-align: center;
+    padding: 20px;
+    background-color: #ffebcd;
+    border-radius: 20px;
+}
+
+header h1 {
+    font-family: 'Pacifico', cursive;
+    color: #ff69b4;
+    font-size: 2.5em;
+}
+
+header p {
+    font-size: 1.2em;
+    color: #f688bf;
+}
+
+
+header img.cake-image {
+    width: 50%; /* Adjust the width as needed */
+    height: auto;
+    margin-top: 10px;
+}
+
+section {
+    text-align: center;
+    padding: 20px;
+    margin: 4px;
+    background-color: #fffacd;
+    border-radius: 20px;
+}
+
+section h2 {
+    font-family: 'Pacifico', cursive;
+    color: #ff69b4;
+    font-size: 2em;
+}
+section h3 {
+    font-family: 'Pacifico', cursive;
+    color: #ff69b4;
+    font-size: 1em;
+}
+
+section p {
+    font-size: 1em;
+    color: #333;
+}
+
+.image-container, .image-container-tea {
+    position: relative;
+    width: 100%;
+    max-width: 600px;
+    margin: 0 auto;
+}
+
+.image-container img, .image-container-tea img {
+    width: 100%;
+    display: none;
+    cursor: pointer;
+}
+
+.image-container img.active, .image-container-tea img.active {
+    display: block;
+}
+
+.image-container-tea img {
+    height: 300px; /* Set a fixed height for tea images */
+    object-fit: cover; /* Ensure the image covers the entire area */
+}
+
+button {
+    display: block;
+    margin: 10px auto;
+    padding: 10px 20px;
+    background-color: #ff69b4;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+button:hover {
+    background-color: #ff1493;
+}
+
+@media (max-width: 600px) {
+
+    section{
+        text-align: center;
+    }
+    header h1 {
+        font-size: 2em;
+    }
+
+    header p {
+        font-size: 1em;
+    }
+
+    section h2 {
+        font-size: 1.5em;
+    }
+
+    section p {
+        font-size: 0.9em;
+    }
+}
